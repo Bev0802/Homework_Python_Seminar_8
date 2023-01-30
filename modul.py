@@ -32,18 +32,22 @@ def add_subject(subject):
     else: 
         print("Такой предмет уже есть в программе!")
 
+#2 - Добавление оценки ученику по предмету
 def add_grade(student, subject, grade):
     students_basa[student][subject].append(grade)
     print(f'Добалена оценка {grade} студенту {student} по предмету {subject}')
     print_students_basa()
 
+#3 - Показ списка учеников (имена фамилия)
 def show_students_names():
     for student in students_name:
         print(student)
 
+#4 - Показ листа оценок конкретного ученика.
 def show_student_journal(student_name):
     print(students_basa[student_name])
 
+#5 - Генерация фамилий, предметов, оценок и запись их в журнал.
 def random_list():
     for i in range (0, len(students_last_name)):
         random_index = random.randint(0, len(students_last_name) - 1)
@@ -65,10 +69,12 @@ def random_list():
     for student, subject in students_basa.items():
         print(student, subject)
 
+#Построная распечатка базы
 def print_students_basa():
     for student, subject in students_basa.items():
         print(student, subject)
 
+#6 - Экспор Журнала студентов в файл.
 def write_file():
     with open('Students_basa.txt', 'a') as file:
         for student, subject in students_basa.items():
@@ -77,7 +83,7 @@ def write_file():
             file.write('\n')
     file.close()
 
-
+#7 - Импорт Журнала студентов из файла.
 def reading_file():
     with open('Students_basa.txt', 'r') as file:
        while True:
