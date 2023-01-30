@@ -16,11 +16,11 @@ def data_request():
     return dr
 
 def input_student():
-    student = input("Введите Фамили и имя студента: ")
+    student = input("Введите Фамилю и имя студента: ")
     return student
 
 def input_subject():
-    subject = input("Предмет: ")
+    subject = input("Введите Предмет: ")
     return subject
 
 def input_grade():
